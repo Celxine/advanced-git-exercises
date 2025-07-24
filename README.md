@@ -45,4 +45,16 @@ git commit -m "chore: Create fourth file"
 
 git log --oneline
 # Confirmed: commits are clean and separated correctly
+
+# Start interactive rebase on the last two commits
+git rebase -i HEAD~2
+
+# In the editor, change the second commit's action from pick to squash or s
+# Save and exit the editor, when prompted edit the combined commit message to Create third and fourth file
+
+
+# Verify the new combined commit
+git log --oneline
+
+# You should see one commit for both files with the message: "Create third and fourth file"
 ```
