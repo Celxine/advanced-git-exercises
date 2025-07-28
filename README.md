@@ -11,14 +11,16 @@ This repo contains step-by-step solutions to advanced Git exercises including:
 
 ## ✅ Step-by-Step Git Process
 
-### 1. Setup and Initial Commits
+---
+
+### 🟢 Step 1: Cloning the Repo and Making Initial Commits
 
 ```bash
 # Cloned the GitHub repo
-git clone <https://github.com/Celxine/advanced-git-exercises.git>
+git clone https://github.com/Celxine/advanced-git-exercises.git
 cd advanced-git-exercises
 
-# Created test files
+# Created test files and made first two commits
 touch test1.md test2.md
 git add .
 git commit -m "chore: Create initial file"
@@ -27,11 +29,24 @@ touch test3.md test4.md
 git add .
 git commit -m "chore: Create third and fourth files"
 
+
+```
+### 🟢 Step 2: Squashing Commits from Root
+
+```bash
+
+# Used rebase from root to squash first two commits
 git rebase -i --root
-# Changed second commit from 'pick' to 'squash'
-# Combined commit messages:
+
+# In the editor:
+# - Change second commit from 'pick' to 'squash'
+# - Combine commit messages as:
 #   chore: Create initial file and second file
 
+```
+
+### 🟢 Step 3: Splitting a Commit Using git reset
+```bash
 # Reset back one commit to unstage files
 git reset --soft HEAD~1
 
@@ -42,7 +57,13 @@ git commit -m "chore: Create third file"
 # Add and commit fourth file
 git add test4.md
 git commit -m "chore: Create fourth file"
+```
 
 git log --oneline
 # Confirmed: commits are clean and separated correctly
+```
+
+### 🟢 Step 7: Reordering commits
+```bash
+
 ```
